@@ -1,0 +1,71 @@
+<section id="menu_food" class="menu-items" style="display: flex;">
+            <?php
+            while ($row = $result_food->fetch_assoc()) {
+                echo "<div class='menu-item'>";
+                echo "<img src='" . htmlspecialchars($row['image_path']) . "' alt='" . htmlspecialchars($row['name']) . "' class='menu-item-image'>";
+                echo "<div class='menu-item-details'>";
+                echo "<h2 class='menu-item-name'>" . htmlspecialchars($row['name']) . "</h2>";
+                echo "<p class='menu-item-price'>ราคา: " . htmlspecialchars($row['price']) . " บาท</p>";
+                echo "<p class='menu-item-description'>" . htmlspecialchars($row['description']) . "</p>";
+                echo "<label for='quantity'>จำนวน:</label>";
+                echo "<div class='quantity-controls'>";
+                echo "<button type='button' class='quantity-btn' onclick='changeQuantity(-1, \"" . htmlspecialchars($row['item_id']) . "\")'>-</button>";
+                echo "<input type='number' id='quantity-" . htmlspecialchars($row['item_id']) . "' name='quantity' value='1' min='1'>";
+                echo "<button type='button' class='quantity-btn' onclick='changeQuantity(1, \"" . htmlspecialchars($row['item_id']) . "\")'>+</button>";
+                echo "</div>";
+                echo "<button type='button' name='add_to_cart' class='add-to-cart-btn' onclick='addToCart(\"" . htmlspecialchars($row['item_id']) . "\")'>เพิ่มในตะกร้า</button>";
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>
+        </section>
+
+
+        <!-- เมนูเครื่องดื่ม -->
+        <section id="menu_drink" class="menu-items">
+            <?php
+            while ($row = $result_drink->fetch_assoc()) {
+                echo "<div class='menu-item'>";
+                echo "<img src='" . htmlspecialchars($row['image_path']) . "' alt='" . htmlspecialchars($row['name']) . "' class='menu-item-image'>";
+                echo "<div class='menu-item-details'>";
+                echo "<h2 class='menu-item-name'>" . htmlspecialchars($row['name']) . "</h2>";
+                echo "<p class='menu-item-price'>ราคา: " . htmlspecialchars($row['price']) . " บาท</p>";
+                echo "<form action='cart_buffet.php' method='POST' class='add-to-cart-form'>";
+                echo "<input type='hidden' name='item_id' value='" . htmlspecialchars($row['item_id']) . "'>";
+                echo "<label for='quantity'>จำนวน:</label>";
+                echo "<div class='quantity-controls'>";
+                echo "<button type='button' class='quantity-btn' onclick='changeQuantity(-1, \"" . htmlspecialchars($row['item_id']) . "\")'>-</button>";
+                echo "<input type='number' id='quantity-" . htmlspecialchars($row['item_id']) . "' name='quantity' value='1' min='1'>";
+                echo "<button type='button' class='quantity-btn' onclick='changeQuantity(1, \"" . htmlspecialchars($row['item_id']) . "\")'>+</button>";
+                echo "</div>";
+                echo "<button type='button' name='add_to_cart' class='add-to-cart-btn' onclick='addToCart(\"" . htmlspecialchars($row['item_id']) . "\")'>เพิ่มในตะกร้า</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>
+        </section>
+
+        <!-- เมนูของหวาน -->
+        <section id="menu_dessert" class="menu-items">
+            <?php
+            while ($row = $result_dessert->fetch_assoc()) {
+                echo "<div class='menu-item'>";
+                echo "<img src='" . htmlspecialchars($row['image_path']) . "' alt='" . htmlspecialchars($row['name']) . "' class='menu-item-image'>";
+                echo "<div class='menu-item-details'>";
+                echo "<h2 class='menu-item-name'>" . htmlspecialchars($row['name']) . "</h2>";
+                echo "<p class='menu-item-price'>ราคา: " . htmlspecialchars($row['price']) . " บาท</p>";
+                echo "<form action='cart_buffet.php' method='POST' class='add-to-cart-form'>";
+                echo "<input type='hidden' name='item_id' value='" . htmlspecialchars($row['item_id']) . "'>";
+                echo "<label for='quantity'>จำนวน:</label>";
+                echo "<div class='quantity-controls'>";
+                echo "<button type='button' class='quantity-btn' onclick='changeQuantity(-1, \"" . htmlspecialchars($row['item_id']) . "\")'>-</button>";
+                echo "<input type='number' id='quantity-" . htmlspecialchars($row['item_id']) . "' name='quantity' value='1' min='1'>";
+                echo "<button type='button' class='quantity-btn' onclick='changeQuantity(1, \"" . htmlspecialchars($row['item_id']) . "\")'>+</button>";
+                echo "</div>";
+                echo "<button type='button' name='add_to_cart' class='add-to-cart-btn' onclick='addToCart(\"" . htmlspecialchars($row['item_id']) . "\")'>เพิ่มในตะกร้า</button>";
+                echo "</form>";
+                echo "</div>";
+                echo "</div>";
+            }
+            ?>

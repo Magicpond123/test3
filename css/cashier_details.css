@@ -1,0 +1,122 @@
+/* ตั้งค่าทั่วไป */
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: #f7f7f7;
+    padding: 20px;
+}
+
+/* หัวข้อหลัก */
+h1, h3 {
+    color: #007bff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ส่วนของฟอร์ม */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ปุ่ม */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-warning {
+    background-color: #ffc107;
+    border-color: #ffc107;
+}
+
+.btn-warning:hover {
+    background-color: #e0a800;
+    border-color: #e0a800;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+/* ตารางข้อมูลอาหาร */
+table {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    text-align: center;
+    padding: 10px;
+}
+
+table th {
+    background-color: #007bff;
+    color: #000000;
+}
+
+table td {
+    font-size: 16px;
+}
+
+/* ส่วนของราคารวม */
+.total-price-section {
+    background-color: #e9f7ef;
+    border: 2px solid #28a745;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.total-price-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.total-price-value {
+    font-size: 30px;
+    font-weight: bold;
+    color: #72dc35;
+    margin-top: 10px;
+}
+
+.total-food-price, .total-people-price {
+    font-size: 20px;
+    color: #007bff;
+}
+
+.total-discount, .total-price-after-discount {
+    font-size: 36px;
+    color: #096bd3;
+}
+
+/* ปุ่มจ่ายเงิน */
+.pay-button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pay-button-container .btn-success {
+    font-size: 20px;
+    padding: 10px 30px;
+}

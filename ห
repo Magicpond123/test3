@@ -1,0 +1,245 @@
+<style>
+        body {
+            background-color: #fff5f5;
+            color: #4b4b4b;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #ff4c4c;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar img {
+            max-width: 150px;
+            margin: 0 auto;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #e0e0e0;
+            margin-right: 5px;
+            border-radius: 10px 10px 0 0;
+            color: #333;
+        }
+
+        .tab.active {
+            background-color: #ff4c4c;
+            color: #fff;
+        }
+
+        .menu-items {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .menu-item {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 10px;
+            width: calc(100% - 40px);
+            max-width: 400px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .menu-item-details {
+            padding: 10px 0;
+        }
+
+        .menu-item-name {
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        .menu-item-price {
+            color: #e91e63;
+        }
+
+        .add-to-cart-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .quantity-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1.2em;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .quantity-btn:active {
+            background-color: #003d7a;
+            transform: scale(0.95);
+        }
+
+        input[type='number'] {
+            width: 60px;
+            text-align: center;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 1em;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .quantity-controls label {
+            margin-right: 10px;
+            font-size: 1em;
+        }
+
+        .cart-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #f4f4f4;
+            color: #4b4b4b;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+        }
+
+        .cart-icon:hover {
+            background-color: #e0e0e0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+            transform: scale(1.1);
+        }
+
+        .cart-icon .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: #ff4c4c;
+            color: #ffffff;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (min-width: 600px) {
+            .menu-item {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .menu-item {
+                width: calc(33.3333% - 40px);
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function addToCart(itemId) {
+            var quantity = $('#quantity-' + itemId).val();
+            $.ajax({
+                type: 'POST',
+                url: 'cart_buffet.php', // ไฟล์ PHP ที่จัดการกับการเพิ่มสินค้าในตะกร้า
+                data: {
+                    item_id: itemId,
+                    quantity: quantity,
+                    add_to_cart: true
+                },
+                success: function(response) {
+                    response = JSON.parse(response);
+
+                    if (response.cart_count !== undefined) {
+                        updateCartIcon(response.cart_count); // อัปเดตจำนวนสินค้าในตะกร้าแบบเรียลไทม์
+                        alert('เพิ่มสินค้าลงตะกร้าเรียบร้อยแล้ว!');
+                    } else {
+                        alert('เกิดข้อผิดพลาดในการอัพเดตไอคอนตะกร้าสินค้า');
+                    }
+                },
+                error: function() {
+                    alert('เกิดข้อผิดพลาดในการเพิ่มสินค้าลงตะกร้า');
+                }
+            });
+        }
+
+        function updateCartIcon(cartCount) {
+            $('.cart-icon .badge').text(cartCount); // อัปเดตจำนวนสินค้าในตะกร้า
+        }
+    </script>
+
+    <script>
+        function changeQuantity(amount, id) {
+            var quantityInput = document.getElementById('quantity-' + id);
+            var currentQuantity = parseInt(quantityInput.value, 10);
+            var newQuantity = currentQuantity + amount;
+
+            if (newQuantity >= 0) {
+                quantityInput.value = newQuantity; // Update visible quantity
+                hiddenQuantityInput.value = newQuantity; // Update hidden input
+            }
+        }
+
+        function openTab(tabName) {
+            var i;
+            var x = document.getElementsByClassName("menu-items");
+            var tabs = document.getElementsByClassName("tab");
+
+            // ซ่อนเมนูทั้งหมด
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            // นำ `active` class ออกจาก tab ทั้งหมด
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+
+            // แสดงเมนูที่เลือกและเพิ่ม `active` class ไปยัง tab ที่เลือก
+            document.getElementById(tabName).style.display = "flex";
+            event.currentTarget.classList.add("active");
+        }
+    </script>

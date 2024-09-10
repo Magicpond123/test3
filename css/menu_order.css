@@ -1,0 +1,465 @@
+<<<<<<< HEAD
+#btn{
+    padding: 10px;
+}
+#pd {
+    padding: 10px;
+}
+
+body {
+    background-color: #fff5f5;
+    color: #4b4b4b;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #ff4c4c;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar img {
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    margin-right: 5px;
+    border-radius: 10px 10px 0 0;
+    color: #333;
+}
+
+.tab.active {
+    background-color: #ff4c4c;
+    color: #fff;
+}
+
+.menu-items {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.menu-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: calc(100% - 40px);
+    max-width: 400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+.menu-item-name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.menu-item-price {
+    color: #e91e63;
+}
+.add-to-cart-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 10px;
+text-align: center; /* เพิ่มนี้เพื่อให้ปุ่มอยู่ตรงกลาง */
+}
+.menu-item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดแนวกลางในแนวตั้ง */
+    text-align: center; /* จัดแนวกลางในแนวนอน */
+}
+
+.add-to-cart-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%; /* ใช้ความกว้างของพ่อแม่เต็มที่ */
+}
+
+.add-to-cart-btn {
+    margin-top: 10px; /* ช่องว่างระหว่างปุ่มกับฟอร์ม */
+}
+
+.add-to-cart-btn {
+background-color: #C7253E; /* เปลี่ยนสีปุ่มให้โดดเด่น */
+color: #fff;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+font-size: 1em;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s, transform 0.2s;
+margin-top: 10px; /* ระยะห่างระหว่างปุ่มและปริมาณ */
+text-align: center;
+}
+
+.add-to-cart-btn:hover {
+background-color: #218838; /* สีปุ่มเมื่อ hover */
+transform: scale(1.05);
+}
+
+.add-to-cart-btn:active {
+background-color: #1e7e34; /* สีปุ่มเมื่อกด */
+transform: scale(0.95);
+}
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.quantity-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.quantity-btn:active {
+    background-color: #003d7a;
+    transform: scale(0.95);
+}
+
+input[type='number'] {
+    width: 60px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-controls label {
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.cart-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f4f4f4;
+    color: #4b4b4b;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.cart-icon:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.cart-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4c4c;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 600px) {
+    .menu-item {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (min-width: 900px) {
+    .menu-item {
+        width: calc(33.3333% - 40px);
+    }
+=======
+#btn{
+    padding: 10px;
+}
+#pd {
+    padding: 10px;
+}
+
+body {
+    background-color: #fff5f5;
+    color: #4b4b4b;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #ff4c4c;
+    padding: 10px;
+    text-align: center;
+}
+
+.navbar img {
+    max-width: 150px;
+    margin: 0 auto;
+}
+
+.tab-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.tab {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+    margin-right: 5px;
+    border-radius: 10px 10px 0 0;
+    color: #333;
+}
+
+.tab.active {
+    background-color: #ff4c4c;
+    color: #fff;
+}
+
+.menu-items {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.menu-item {
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: calc(100% - 40px);
+    max-width: 400px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+.menu-item-name {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.menu-item-price {
+    color: #e91e63;
+}
+.add-to-cart-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 10px;
+text-align: center; /* เพิ่มนี้เพื่อให้ปุ่มอยู่ตรงกลาง */
+}
+.menu-item-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* จัดแนวกลางในแนวตั้ง */
+    text-align: center; /* จัดแนวกลางในแนวนอน */
+}
+
+.add-to-cart-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%; /* ใช้ความกว้างของพ่อแม่เต็มที่ */
+}
+
+.add-to-cart-btn {
+    margin-top: 10px; /* ช่องว่างระหว่างปุ่มกับฟอร์ม */
+}
+
+.add-to-cart-btn {
+background-color: #C7253E; /* เปลี่ยนสีปุ่มให้โดดเด่น */
+color: #fff;
+border: none;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 5px;
+font-size: 1em;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+transition: background-color 0.3s, transform 0.2s;
+margin-top: 10px; /* ระยะห่างระหว่างปุ่มและปริมาณ */
+text-align: center;
+}
+
+.add-to-cart-btn:hover {
+background-color: #218838; /* สีปุ่มเมื่อ hover */
+transform: scale(1.05);
+}
+
+.add-to-cart-btn:active {
+background-color: #1e7e34; /* สีปุ่มเมื่อกด */
+transform: scale(0.95);
+}
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.quantity-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.2em;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.quantity-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.quantity-btn:active {
+    background-color: #003d7a;
+    transform: scale(0.95);
+}
+
+input[type='number'] {
+    width: 60px;
+    text-align: center;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-controls label {
+    margin-right: 10px;
+    font-size: 1em;
+}
+
+.cart-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f4f4f4;
+    color: #4b4b4b;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.cart-icon:hover {
+    background-color: #e0e0e0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1);
+}
+
+.cart-icon .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4c4c;
+    color: #ffffff;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 600px) {
+    .menu-item {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (min-width: 900px) {
+    .menu-item {
+        width: calc(33.3333% - 40px);
+    }
+>>>>>>> a5bd7ba0f7f0d65ac84fcc115a3ede4ad22eb721
+}
+.navbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-dropdown {
+    position: absolute;
+    top: 10px; /* ระยะจากด้านบน */
+    left: 10px; /* ระยะจากด้านซ้าย */
+}
+
+.table-dropdown select {
+    padding: 5px;
+    font-size: 14px;
+}

@@ -1,0 +1,82 @@
+/* Reset CSS เพื่อให้แน่ใจว่าการแสดงผลจะเป็นไปตามที่คาดหวัง */
+body, h1, h2, p, form {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 2rem;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.menu-item {
+    background-color: #fff;
+    border: 2px solid #ddd; /* เพิ่มกรอบรอบๆ องค์ประกอบ */
+    border-radius: 8px; /* มุมโค้งมน */
+    overflow: hidden;
+    width: calc(33% - 1rem);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของกรอบ */
+    transition: border-color 0.3s, box-shadow 0.3s; /* เอฟเฟกต์การเปลี่ยนแปลง */
+}
+
+.menu-item:hover {
+    border-color: #007bff; /* เปลี่ยนสีกรอบเมื่อเอาเมาส์ไปวาง */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อเอาเมาส์ไปวาง */
+}
+
+.menu-item-image {
+    width: 100%;
+    height: auto;
+}
+
+.menu-item-details {
+    padding: 1rem;
+}
+
+.menu-item-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.menu-item-price, .menu-item-description {
+    margin-bottom: 0.5rem;
+}
+
+.add-to-cart-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.add-to-cart-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #218838;
+}

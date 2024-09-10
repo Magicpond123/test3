@@ -1,0 +1,253 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.header-container {
+    text-align: center;
+}
+
+h1 {
+    background-color: #C7253E;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #C7253E;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.cart-item div {
+    text-align: left;
+}
+
+.cart-item p {
+    margin: 5px 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.quantity-btn:hover {
+    background-color: #C7253E;
+    transform: scale(1.05);
+}
+.quantity-btn:hover {
+    background-color: #C7253E;
+    transform: scale(0.95);
+}
+input[type="text"] {
+    width: 40px; /* ขนาดความกว้างของกรอบจำนวน */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px; /* ปรับขนาดฟอนต์ตามต้องการ */
+}
+
+.checkout-btn,
+.remove-btn {
+    background-color: #C7253E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.remove-btn {
+    background-color: #f44336;
+}
+
+.remove-btn:hover {
+    background-color: #e53935;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+=======
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5dc;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.header-container {
+    text-align: center;
+}
+
+h1 {
+    background-color: #C7253E;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 3px solid #C7253E;
+    display: inline-block;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cart-container {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.cart-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.cart-item div {
+    text-align: left;
+}
+
+.cart-item p {
+    margin: 5px 0;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+.quantity-btn:hover {
+    background-color: #C7253E;
+    transform: scale(1.05);
+}
+.quantity-btn:hover {
+    background-color: #C7253E;
+    transform: scale(0.95);
+}
+input[type="text"] {
+    width: 40px; /* ขนาดความกว้างของกรอบจำนวน */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px; /* ปรับขนาดฟอนต์ตามต้องการ */
+}
+
+.checkout-btn,
+.remove-btn {
+    background-color: #C7253E;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.remove-btn {
+    background-color: #f44336;
+}
+
+.remove-btn:hover {
+    background-color: #e53935;
+}
+
+.checkout-btn:hover {
+    background-color: #45a049;
+>>>>>>> a5bd7ba0f7f0d65ac84fcc115a3ede4ad22eb721
+}

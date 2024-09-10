@@ -1,0 +1,135 @@
+<<<<<<< HEAD
+body {
+    background-color: #f5f5dc; /* สีครีม */
+    color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* สีพื้นหลังที่โปร่งใส */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    max-width: 1200px;
+    margin: 20px auto;
+    min-height: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาให้กับ container */
+}
+
+.table thead th {
+    background-color: #5B99C2;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-primary {
+    background-color: #5B99C2;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e67e7d;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    min-height: 600px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #5B99C2;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* กรอบด้านล่าง */
+}
+
+.form-select {
+    width: auto;
+    max-width: 200px;
+}
+
+.card-body {
+    position: relative;
+}
+
+.back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+=======
+body {
+    background-color: #f5f5dc; /* สีครีม */
+    color: #333;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* สีพื้นหลังที่โปร่งใส */
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    max-width: 1200px;
+    margin: 20px auto;
+    min-height: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาให้กับ container */
+}
+
+.table thead th {
+    background-color: #5B99C2;
+    color: white;
+}
+
+.table tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-primary {
+    background-color: #5B99C2;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e67e7d;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    min-height: 600px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #5B99C2;
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid #ddd; /* กรอบด้านล่าง */
+}
+
+.form-select {
+    width: auto;
+    max-width: 200px;
+}
+
+.card-body {
+    position: relative;
+}
+
+.back-button {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+>>>>>>> a5bd7ba0f7f0d65ac84fcc115a3ede4ad22eb721
